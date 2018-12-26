@@ -1,0 +1,39 @@
+<!--
+  Generated template for the SignUpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>signUp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>邮箱</ion-label>
+      <ion-input clearInput [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>密码</ion-label>
+      <ion-input  type="password" clearInput [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <ion-list-header>性别</ion-list-header>
+    <ion-list radio-group [(ngModel)]="user.gender">
+      <ion-item>
+        <ion-label>男</ion-label>
+        <ion-radio value="male"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>女</ion-label>
+        <ion-radio value="female"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  <button (tap)="signUp()" ion-button block color="secondary" [disabled]="user.email==='' || user.password===''">注册</button>
+</ion-content>

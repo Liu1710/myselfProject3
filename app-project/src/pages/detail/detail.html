@@ -1,0 +1,48 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>商品详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item>
+      <img src="assets/product/cover/{{detail.coverPicture}}" alt="">
+    </ion-item>
+    <ion-item class="title">
+      <h2>{{detail.title}}</h2>
+      <h4>价格：<span>￥{{detail.price}}</span></h4>
+    </ion-item>
+    <ion-item class="details">
+      <div item-start>
+        <p>商品名称：AppleiPhone X</p>
+        <p>多卡支持：单卡单待</p>
+        <p>商品编号：5089253</p>
+        <p>机身内存：64GB</p>
+        <p>网络制式：4G LTE全网通</p>
+      </div>
+      <div item-end>
+        <p>上市年份：2017</p>
+        <p>操作系统：iso</p>
+        <p>颜色：深空灰</p>
+        <p>尺寸：5.8英寸</p>
+        <p>前置摄像头 700万像素</p>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div><img src="assets/product/details/d2.jpg" alt=""></div>
+      <div><img src="assets/product/details/d3.jpg" alt=""></div>
+      <div><img src="assets/product/details/d1.jpg" alt=""></div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

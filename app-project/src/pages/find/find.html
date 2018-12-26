@@ -1,0 +1,41 @@
+<!--
+  Generated template for the FindPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>推荐新品</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item class="button">
+      <button (tap)="synthesize()" ion-button clear>综合</button>
+      <button (tap)="sales()" ion-button clear>销量</button>
+      <button (tap)="price()" ion-button clear>价格</button>
+      <button (tap)="newest()" ion-button clear>最新</button>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngFor="let product of products" no-lines>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/product/cover/{{product.coverPicture}}" alt="">
+      </ion-thumbnail>
+      <h2>{{product.title}}</h2>
+      <p style="color:#900; font-weight:bold;">￥{{product.price}}</p>
+      <p>{{product.brief}}</p>
+      <button (tap)="toDetailPage(product.id)" ion-button item-end clear>查看</button>
+    </ion-item>
+  </ion-list>
+
+  <!------如果hasMoreData为true时允许触发滚动事件,反之为false就不允许滚动------->
+  <ion-infinite-scroll *ngIf="hasMoreData" (ionInfinite)="loadMoreData($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
